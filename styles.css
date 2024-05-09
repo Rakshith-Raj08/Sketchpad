@@ -16,3 +16,7 @@
     margin-right: 5px;
     cursor: pointer;
 }
+
+.selected{
+    border: 2px solid black;
+}

@@ -24,6 +24,9 @@ function makeColumns(cellNum) {
     });
 }
 
+let previousColorDiv = null;
+
+
 function createColorPicker(colors) {
     const colorPicker = document.getElementById("colorPicker");
     colors.forEach(color => {
@@ -32,6 +35,13 @@ function createColorPicker(colors) {
         colorDiv.style.backgroundColor = color;
         colorDiv.addEventListener("click", function() {
             const selectedColor = colorDiv.style.backgroundColor;
+            if (previousColorDiv !== null) {
+                previousColorDiv.classList.remove("selected");
+            }
+            // Add border to the selected color block
+            colorDiv.classList.add("selected");
+            // Update the previousColorDiv variable
+            previousColorDiv = colorDiv;
             document.querySelectorAll(".cell").forEach(cell => {
                 cell.addEventListener("mouseover", function() {
                     cell.style.backgroundColor = selectedColor;
@@ -45,5 +55,5 @@ function createColorPicker(colors) {
 defaultGrid();
 
 // Create color picker with some default colors
-createColorPicker(["red", "green", "blue", "yellow", "purple","white"]);
+createColorPicker(["red", "green", "blue", "yellow", "purple","black","white","orange","pink"]);
 
