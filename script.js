@@ -33,7 +33,7 @@ function createColorPicker(colors) {
         colorDiv.addEventListener("click", function() {
             const selectedColor = colorDiv.style.backgroundColor;
             document.querySelectorAll(".cell").forEach(cell => {
-                cell.addEventListener("click", function() {
+                cell.addEventListener("mouseover", function() {
                     cell.style.backgroundColor = selectedColor;
                 });
             });
@@ -45,5 +45,5 @@ function createColorPicker(colors) {
 defaultGrid();
 
 // Create color picker with some default colors
-createColorPicker(["red", "green", "blue", "yellow", "purple"]);
+createColorPicker(["red", "green", "blue", "yellow", "purple","white"]);
 
